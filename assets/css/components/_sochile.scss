@@ -1,0 +1,18 @@
+.sochile-list-box {
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    li {
+      padding: 0 12px;
+      a {
+        @include trans(0.2);
+        color: $color-black;
+        font-size: 22px;
+        &:hover {
+          color: $color-primary;
+        }
+      }
+    }
+  }
+}

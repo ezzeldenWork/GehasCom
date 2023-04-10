@@ -1,0 +1,264 @@
+.top-header-section {
+  padding: 12px 0;
+  background-color: rgba($color-gray, 1);
+
+  .list-box {
+    ul {
+      li {
+        padding: 0 12px 0 0;
+        a {
+          font-size: 16px;
+          color: rgba($color-white, 1);
+          @include hover(0.2) {
+            color: rgba($color-primary, 1);
+          }
+        }
+      }
+    }
+  }
+}
+
+.min-header-section {
+  padding: 14px 0;
+  background-color: rgba($color-primary, 1);
+  .menu-box-icon,
+  .mobile-menu {
+    display: none;
+  }
+  .search-box {
+    form {
+      background-color: rgba($color-white, 1);
+      border-radius: 15px;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      input {
+        border: 0;
+        padding: 12px;
+        height: 42px;
+        width: 100%;
+      }
+      button,
+      input[type="submit"] {
+        border-radius: inherit;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 9px 40px;
+        color: rgba($color-white, 1);
+        background-color: rgba($color-gray, 1);
+        border: 0;
+        @include hover(0.2) {
+          color: rgba($color-primary, 1);
+          background-color: rgba($color-black, 1);
+        }
+      }
+    }
+  }
+  .login-box-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    .login-box {
+      padding: 0 12px 0 0;
+      a {
+        font-size: 14px;
+        font-weight: 500;
+        color: rgba($color-white, 1);
+        i {
+          color: rgba($color-white, 1);
+        }
+        .text {
+          color: rgba($color-black, 1);
+        }
+        @include hover(0.2) {
+          .text {
+            color: rgba($color-white, 1);
+          }
+        }
+      }
+    }
+  }
+}
+
+.nav-section {
+  position: relative;
+  z-index: 9;
+  .nav-box {
+    ul {
+      display: flex;
+      li {
+        padding: 0 0 0 24px;
+        a {
+          font-weight: 500;
+          font-size: 14px;
+          color: rgba($color-gray, 1);
+          @include hover(0.2) {
+            color: rgba($color-primary, 1);
+          }
+        }
+      }
+    }
+  }
+  .category-box {
+    position: relative;
+    .category-title {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 16px;
+      color: rgba($color-black, 1);
+      padding: 18px 14px;
+      background-color: rgba($color-primary, 1);
+      border-bottom-left-radius: 8px;
+      border-bottom-right-radius: 8px;
+      i {
+        color: rgba($color-white, 1);
+      }
+    }
+    &:hover {
+      ul {
+        top: 50px;
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+    ul {
+      position: absolute;
+      z-index: 99999;
+      border-bottom-left-radius: 8px;
+      border-bottom-right-radius: 8px;
+      width: 100%;
+      top: 60px;
+      @include hover(0.2);
+      opacity: 0;
+      visibility: hidden;
+      li {
+        border-top: 1px solid rgba(#333, 1);
+        &:first-of-type {
+          border-top: 1px solid rgba($color-white, 0);
+        }
+        a {
+          color: rgba($color-white, 1);
+          background-color: rgba($color-gray, 1);
+          padding: 12px;
+          display: block;
+          width: 100%;
+          @include hover(0.2) {
+            background-color: rgba($color-black, 1);
+          }
+        }
+      }
+    }
+  }
+}
+
+@include media(772) {
+  .order-md1 {
+    order: -1;
+  }
+  .order-md2 {
+    order: -2;
+  }
+  .order-md3 {
+    order: -3;
+  }
+  .min-header-section {
+    .menu-box-icon {
+      display: block;
+      i {
+        font-size: 22px;
+        color: rgba($color-white, 1);
+        cursor: pointer;
+        @include hover(0.2) {
+          color: rgba($color-gray, 1);
+        }
+      }
+    }
+    .mobile-menu {
+      width: 220px;
+      position: fixed;
+      top: 0;
+      display: block;
+      right: -250px;
+      bottom: 0;
+      z-index: 999;
+      background-color: rgba($color-gray, 1);
+      @include trans(0.2);
+      box-shadow: 5px 0 13px rgba($color-white, 0.5);
+      &.open-menu {
+        right: 0 !important;
+      }
+      .nav-tabs {
+        .nav-link {
+          width: 50%;
+          border-radius: 0;
+          color: rgba($color-white, 1);
+          &:hover {
+            border: 0;
+          }
+          &.active {
+            color: rgba($color-gray, 1);
+          }
+        }
+      }
+      .tab-content {
+        .tab-pane {
+          .menu-list {
+            ul {
+              li {
+                &.current_page_item,
+                &:hover {
+                  a {
+                    background-color: rgba($color-white, 0.1);
+                  }
+                }
+                a {
+                  display: block;
+                  width: 100%;
+                  color: rgba($color-white, 1);
+                  padding: 12px;
+                  @include trans(0.2);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .logo-box {
+      text-align: end;
+    }
+    .search-box {
+      padding-top: 24px;
+    }
+    .login-box-container {
+      .login-box {
+        a {
+          .text {
+            font-size: 10px;
+          }
+        }
+      }
+    }
+  }
+  .nav-section {
+    display: none;
+  }
+}
+
+@include media(482) {
+  .min-header-section {
+    .login-box-container {
+      .login-box {
+        a {
+          .text {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
